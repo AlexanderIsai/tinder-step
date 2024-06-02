@@ -13,7 +13,6 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         int port = Integer.parseInt(System.getenv().getOrDefault("PORT", "8080"));
-
         Server server = new Server(port);
 
         Configuration cfg = new Configuration(Configuration.VERSION_2_3_30);
@@ -35,6 +34,7 @@ public class App {
         handler.addServlet(new ServletHolder(new LikedProfilesServlet(likedDAO, cfg)), "/liked");
         handler.addServlet(new ServletHolder(new MessagesServlet(messageDAO, userDAO, cfg)), "/messages/*");
 
+        handler.addServlet(new ServletHolder(new RootServlet()), "/");
         handler.addServlet(new ServletHolder(new ContentServlet("static")), "/static/*");
 
         server.setHandler(handler);
