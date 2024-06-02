@@ -12,7 +12,9 @@ public class App {
 
     public static void main(String[] args) throws Exception {
 
-        Server server = new Server(8080);
+        int port = Integer.parseInt(System.getenv().getOrDefault("PORT", "8080"));
+
+        Server server = new Server(port);
 
         Configuration cfg = new Configuration(Configuration.VERSION_2_3_30);
         cfg.setClassForTemplateLoading(App.class, "/templates");
