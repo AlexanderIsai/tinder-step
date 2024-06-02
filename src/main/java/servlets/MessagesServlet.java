@@ -52,7 +52,7 @@ public class MessagesServlet extends HttpServlet {
         }
         int userId;
         try {
-            userId = Integer.parseInt(userIdPath.substring(1)); // Получаем ID пользователя из URL
+            userId = Integer.parseInt(userIdPath.substring(1));
         } catch (NumberFormatException e) {
             resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid user ID format");
             return;

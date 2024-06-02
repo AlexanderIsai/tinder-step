@@ -21,7 +21,6 @@ public class ContentServlet extends HttpServlet {
         String fileName = req.getPathInfo();
         String fullName = prefix + fileName;
 
-        // Ensure content type is correctly set based on file type
         if (fileName.endsWith(".css")) {
             resp.setContentType("text/css");
         } else if (fileName.endsWith(".js")) {

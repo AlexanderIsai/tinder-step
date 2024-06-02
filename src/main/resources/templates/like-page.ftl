@@ -18,7 +18,7 @@
 <div class="container">
     <div class="row mt-3">
         <div class="col-12 text-right">
-            <p>Привет, ${currentUser.name}!</p>
+            <p>Hello, ${currentUser.name}!</p>
             <form method="post" action="/logout" style="display:inline;">
                 <button type="submit" class="btn btn-secondary">Logout</button>
             </form>
